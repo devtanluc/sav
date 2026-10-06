@@ -1,6 +1,6 @@
 {
-  "extends": "@sav/config/tsconfig.base.json",
-  "compilerOptions": {
-    "noEmit": true
-  }
+	"extends": "@sav/config/tsconfig.base.json",
+	"compilerOptions": {
+		"noEmit": true
+	}
 }

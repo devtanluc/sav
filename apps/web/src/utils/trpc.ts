@@ -7,35 +7,35 @@ import { toast } from "sonner";
 import { ENV } from "../env";
 
 export const queryClient = new QueryClient({
-  queryCache: new QueryCache({
-    onError: (error, query) => {
-      toast.error(error.message, {
-        action: {
-          label: "retry",
-          onClick: () => {
-            query.invalidate();
-          },
-        },
-      });
-    },
-  }),
+	queryCache: new QueryCache({
+		onError: (error, query) => {
+			toast.error(error.message, {
+				action: {
+					label: "retry",
+					onClick: () => {
+						query.invalidate();
+					},
+				},
+			});
+		},
+	}),
 });
 
 export const trpcClient = createTRPCClient<AppRouter>({
-  links: [
-    httpBatchLink({
-      url: `${ENV.VITE_SERVER_URL.replace(/\/$/, "")}/trpc`,
-      fetch(url, options) {
-        return fetch(url, {
-          ...options,
-          credentials: "include",
-        });
-      },
-    }),
-  ],
+	links: [
+		httpBatchLink({
+			url: `${ENV.VITE_SERVER_URL.replace(/\/$/, "")}/trpc`,
+			fetch(url, options) {
+				return fetch(url, {
+					...options,
+					credentials: "include",
+				});
+			},
+		}),
+	],
 });
 
 export const trpc = createTRPCOptionsProxy<AppRouter>({
-  client: trpcClient,
-  queryClient,
+	client: trpcClient,
+	queryClient,
 });

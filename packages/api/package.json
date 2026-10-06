@@ -1,24 +1,24 @@
 {
-  "name": "@sav/api",
-  "type": "module",
-  "exports": {
-    ".": "./src/index.ts",
-    "./*": "./src/*.ts"
-  },
-  "scripts": {
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@sav/auth": "workspace:*",
-    "@sav/db": "workspace:*",
-    "@trpc/client": "catalog:",
-    "@trpc/server": "catalog:",
-    "@types/pg": "catalog:",
-    "drizzle-orm": "catalog:",
-    "zod": "catalog:"
-  },
-  "devDependencies": {
-    "@sav/config": "workspace:*",
-    "typescript": "catalog:"
-  }
+	"name": "@sav/api",
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts",
+		"./*": "./src/*.ts"
+	},
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@sav/auth": "workspace:*",
+		"@sav/db": "workspace:*",
+		"@trpc/client": "catalog:",
+		"@trpc/server": "catalog:",
+		"@types/pg": "catalog:",
+		"drizzle-orm": "catalog:",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@sav/config": "workspace:*",
+		"typescript": "catalog:"
+	}
 }
