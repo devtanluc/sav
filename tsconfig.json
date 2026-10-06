@@ -1,0 +1,3 @@
+{
+  "extends": "@sav/config/tsconfig.base.json"
+}
